@@ -18,11 +18,11 @@ exports.createProduto = async (request, response) => {
         });
 
         console.log("Produto criado:", novo_produto);
-        response.json({ message: 'Registro criado com sucesso', produto: novo_produto });
+        response.status(201).json({ message: 'Registro criado com sucesso', produto: novo_produto });
     } catch (error) {
         console.error('Erro ao inserir registro:', error);
         console.log('Corpo da Requisição:', request.body);
-        response.status(500).json({ error: 'Erro ao inserir registro' });
+        response.status(400).json({ error: 'Erro ao inserir registro' });
     }
 };
 
@@ -31,7 +31,7 @@ exports.createProduto = async (request, response) => {
 exports.getAllProdutos = async (request, response) => {
     try {
         const produtos = await Produto.findAll();
-        response.json(produtos);
+        response.status(200).json(produtos);
     } catch (error) {
         console.error('Erro ao ler registros:', error);
         response.status(500).json({ error: 'Erro ao ler registros' });
@@ -47,7 +47,7 @@ exports.getProdutoById = async (request, response) => {
         if (!produto) {
             return response.status(404).json({ error: 'Registro não encontrado' });
         }
-        response.json(produto);
+        response.status(200).json(produto);
     } catch (error) {
         console.error('Erro ao buscar o registro', error);
         response.status(500).json({ error: 'Erro ao buscar o registro' });
@@ -74,7 +74,7 @@ exports.updateProduto = async (request, response) => {
             preco,
             disponibilidade,
         });
-        response.json({ message: 'Registro atualizado com sucesso', produto: produto_atualizar });
+        response.status(200).json({ message: 'Registro atualizado com sucesso', produto: produto_atualizar });
     } catch (error) {
         console.error('Erro ao atualizar o registro', error);
         response.status(500).json({ error: 'Erro ao atualizar o registro' });
@@ -93,7 +93,7 @@ exports.deleteProduto = async (request, response) => {
         }
 
         await produto_deletar.destroy();
-        response.json({ message: 'Registro excluído com sucesso', produto: produto_deletar});
+        response.status(200).json({ message: 'Registro excluído com sucesso', produto: produto_deletar});
     } catch (error) {
         console.error('Erro ao deletar o registro', error);
         response.status(500).json({ error: 'Erro ao deletar o registro' });
