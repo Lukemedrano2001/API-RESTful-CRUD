@@ -15,6 +15,6 @@
   },
   "keywords": [],
   "author": "Guilherme Oliveira Medrano",
-  "license": "ISC",
+  "license": "MIT License",
   "description": "É um projeto de uma API RESTful CRUD usando das bibliotecas express e sequelize para que sejam feitas as operações CRUD no PostgreSQL, usando rotas personalizadas com o envio de requisições com os métodos HTTP. Usando é claro da Arquitetura MVC para melhor organização de código"
 }
