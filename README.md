@@ -24,7 +24,7 @@ Bem-vindo à minha primeira API RESTful CRUD! Este projeto permite realizar oper
    - DB_PORT = 5432
 
 ## Testes:
-* Os testes foram feitos usando do software chamado [Postman](https://www.postman.com/downloads/)
+* Os testes dos métodos HTTP da API foram feitos usando do software chamado [Postman](https://www.postman.com/downloads/)
 * Teste todas as rotas para realizar os comandos CRUD da API.
 * Dados iniciais para testes: Por padrão já se tem dados iniciais para os testes da API
 
