@@ -37,7 +37,7 @@ Bem-vindo à minha primeira API RESTful CRUD! Este projeto permite realizar oper
 
 ## Arquitetura MVC e módulos separados e organizados:
 * `app.js:` Arquivo principal do projeto, lança o servidor HTTP na porta usando Express.
-* `controlers/controller.js:` Controla as requisições, processa e retorna as respostas, além de gerenciar a lógica do CRUD usando Sequelize e o módulo de conexão com o ## Banco de dados.
-* `db_connection/connection.js:` Faz a conexão com o banco de dados usando Sequelize.
-* `routes/rotas.js:` Define as rotas e métodos HTTP usando Express.
-* `models/modelo.js:` Responsável pela definição da tabela, colunas e tipos de dados usando Sequelize.
+* `controlers/controller.js:` Controla as requisições, processa e retorna as respostas, além de gerenciar a lógica do CRUD usando Sequelize e o módulo de conexão com o Banco de dados.
+* `db_connection/connection.js:` Faz a conexão com o banco de dados usando o Sequelize.
+* `routes/rotas.js:` Define as rotas e os métodos HTTP usando Express.
+* `models/modelo.js:` Responsável pela definição da tabela, colunas e tipos de dados usando o Sequelize.
