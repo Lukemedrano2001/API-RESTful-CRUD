@@ -4,11 +4,6 @@ Bem-vindo à minha primeira API RESTful CRUD! Este projeto permite realizar oper
 
 ## Instalação e Configuração
 
-## Clone o repositório:
-    ```bash
-    git clone https://github.com/Lukemedrano2001/API-RESTful-CRUD.git
-    ```
-
 ## Instale as dependências e bibliotecas:
     ```bash
     npm init -y
@@ -43,13 +38,3 @@ Bem-vindo à minha primeira API RESTful CRUD! Este projeto permite realizar oper
     - `db_connection/connection.js:` Faz a conexão com o banco de dados usando Sequelize.
     - `routes/rotas.js:` Define as rotas e métodos HTTP usando Express.
     - `models/modelo.js:` Responsável pela definição da tabela, colunas e tipos de dados usando Sequelize.
-
-## Contribuição:
-    - Fork e Pull Request: Sinta-se à vontade para abrir problemas ou enviar pull requests.
-
-## Licença
-    - MIT License: Este projeto está licenciado sob a MIT License.
-
-## Contato:
-    - E-mail: guilhermemedrano2001@gmail.com
-    - Nickname: Lukemedrano2001
