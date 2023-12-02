@@ -5,8 +5,8 @@ Bem-vindo à minha primeira API RESTful CRUD! Este projeto permite realizar oper
 ## Instalação e Configuração
 
 ## Tecnologias usadas:
-* Node.js
-* PostgreSQL
+* [Node.js](https://nodejs.org/en/download)
+* [PostgreSQL](https://www.postgresql.org/download/) 
 
 ## Instale as dependências e bibliotecas:
 * npm init -y
