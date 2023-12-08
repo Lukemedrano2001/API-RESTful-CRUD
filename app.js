@@ -11,8 +11,8 @@ const port = 3000;
 
 
 // Configurando o body-parser
-app.use(body_parser.json());
 app.use(body_parser.urlencoded({ extended: true }));
+app.use(body_parser.json());
 
 
 app.use('/', routes);
