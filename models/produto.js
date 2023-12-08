@@ -1,5 +1,5 @@
-const { DataTypes } = require('sequelize');
-const sequelize = require('../db_connection/connection');
+import { DataTypes } from 'sequelize';
+import sequelize from '../db_connection/connection.js';
 
 
 const Produto = sequelize.define('Produto', {
@@ -8,8 +8,9 @@ const Produto = sequelize.define('Produto', {
         primaryKey: true,
         autoIncrement: true,
     },
-    codigo: {
+    codigo_produto: {
         type: DataTypes.STRING,
+        allowNull: false,
         unique: true,
     },
     nome: {
@@ -20,17 +21,18 @@ const Produto = sequelize.define('Produto', {
         type: DataTypes.INTEGER,
         allowNull: false,
     },
-    preco: {
+    preco_unitario: {
         type: DataTypes.DECIMAL(10, 2),
         allowNull: false,
     },
     disponibilidade: {
         type: DataTypes.BOOLEAN,
         defaultValue: true,
+        allowNull: true
     },
 }, {
     timestamps: false,
 });
 
 
-module.exports = Produto;
+export default Produto;

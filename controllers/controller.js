@@ -1,19 +1,20 @@
-const Produto = require('../models/modelo');
+import Produto from '../models/produto.js';
 
 
 // Rota CREATE: Rota para criar um novo registro
-exports.createProduto = async (request, response) => {
+// INSERT INTO Table (coluna1, coluna2, ...) VALUES (valor1, valor2, ...)
+export const createProduto = async (request, response) => {
     try {
         console.log('Objeto request.body:', request.body);
-        const { nome, codigo, quantidade, preco, disponibilidade } = request.body;
+        const { codigo_produto, nome, quantidade, preco_unitario, disponibilidade } = request.body;
 
-        console.log("Dados recebidos", nome, codigo, quantidade, preco, disponibilidade );
+        console.log("Dados recebidos", codigo_produto, nome, quantidade, preco_unitario, disponibilidade );
 
         const novo_produto = await Produto.create({
+            codigo_produto,
             nome,
-            codigo,
             quantidade,
-            preco,
+            preco_unitario,
             disponibilidade,
         });
 
@@ -28,7 +29,8 @@ exports.createProduto = async (request, response) => {
 
 
 // Rota GET All: Rota para ler todos os registros
-exports.getAllProdutos = async (request, response) => {
+// SELECT * FROM Table
+export const getAllProdutos = async (request, response) => {
     try {
         const produtos = await Produto.findAll();
         response.status(200).json(produtos);
@@ -40,7 +42,8 @@ exports.getAllProdutos = async (request, response) => {
 
 
 // Rota GET por id: Rota para ler um registro específico
-exports.getProdutoById = async (request, response) => {
+// SELECT * FROM Table WHERE id = ?
+export const getProdutoById = async (request, response) => {
     try {
         const id = request.params.id;
         const produto = await Produto.findByPk(id);
@@ -56,9 +59,10 @@ exports.getProdutoById = async (request, response) => {
 
 
 // Rota UPDATE: Rota para atualizar um registro existente
-exports.updateProduto = async (request, response) => {
+// UPDATE Table SET coluna1 = valor1, coluna2 = valor2, ... WHERE id = ?
+export const updateProduto = async (request, response) => {
     const id = request.params.id;
-    const { nome, codigo, quantidade, preco, disponibilidade } = request.body;
+    const { codigo_produto, nome, quantidade, preco_unitario, disponibilidade } = request.body;
 
     try {
         const produto_atualizar = await Produto.findByPk(id);
@@ -68,10 +72,10 @@ exports.updateProduto = async (request, response) => {
         }
 
         await produto_atualizar.update({
+            codigo_produto,
             nome,
-            codigo,
             quantidade,
-            preco,
+            preco_unitario,
             disponibilidade,
         });
         response.status(200).json({ message: 'Registro atualizado com sucesso', produto: produto_atualizar });
@@ -83,7 +87,8 @@ exports.updateProduto = async (request, response) => {
 
 
 // Rota DELETE: Rota para excluir um registro
-exports.deleteProduto = async (request, response) => {
+// DELETE FROM Table WHERE id = ?
+export const deleteProduto = async (request, response) => {
     const id = request.params.id;
     
     try {

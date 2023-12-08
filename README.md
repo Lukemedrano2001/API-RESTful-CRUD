@@ -10,7 +10,7 @@ Bem-vindo à minha primeira API RESTful CRUD! Este projeto permite realizar oper
 
 ## Instale as dependências e bibliotecas:
 * npm init -y
-* npm install express sequelize body-parser pg nodemon dotenv
+* npm install express sequelize pg nodemon dotenv
 
 
 ## Banco de dados:
