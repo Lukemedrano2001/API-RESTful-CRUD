@@ -64,7 +64,7 @@ export const updateProduto = async (request, response) => {
     try {
         const produto_atualizar = await Produto.findByPk(id);
         if (!produto_atualizar) {
-            response.status(404).json({ message: 'Registro não encontrado' });
+            response.status(404).json({ error: 'Registro não encontrado' });
             return;
         }
 
@@ -91,7 +91,7 @@ export const deleteProduto = async (request, response) => {
     try {
         const produto_deletar = await Produto.findByPk(id);
         if (!produto_deletar) {
-            return response.status(404).json({ message: 'Registro não encontrado' });
+            return response.status(404).json({ error: 'Registro não encontrado' });
         }
 
         await produto_deletar.destroy();
