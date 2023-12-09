@@ -21,7 +21,6 @@ export const createProduto = async (request, response) => {
         console.log("Produto criado:", novo_produto);
         response.status(201).json({ message: 'Registro criado com sucesso', produto: novo_produto });
     } catch (error) {
-        console.error('Erro ao inserir registro:', error);
         console.log('Corpo da Requisição:', request.body);
         response.status(400).json({ error: 'Erro ao inserir registro' });
     }
@@ -35,7 +34,6 @@ export const getAllProdutos = async (request, response) => {
         const produtos = await Produto.findAll();
         response.status(200).json(produtos);
     } catch (error) {
-        console.error('Erro ao ler registros:', error);
         response.status(500).json({ error: 'Erro ao ler registros' });
     }
 };
@@ -52,7 +50,6 @@ export const getProdutoById = async (request, response) => {
         }
         response.status(200).json(produto);
     } catch (error) {
-        console.error('Erro ao buscar o registro', error);
         response.status(500).json({ error: 'Erro ao buscar o registro' });
     }
 };
@@ -80,7 +77,7 @@ export const updateProduto = async (request, response) => {
         });
         response.status(200).json({ message: 'Registro atualizado com sucesso', produto: produto_atualizar });
     } catch (error) {
-        console.error('Erro ao atualizar o registro', error);
+        console.log('Corpo da Requisição:', request.body);
         response.status(500).json({ error: 'Erro ao atualizar o registro' });
     }
 };
@@ -100,7 +97,6 @@ export const deleteProduto = async (request, response) => {
         await produto_deletar.destroy();
         response.status(200).json({ message: 'Registro excluído com sucesso', produto: produto_deletar});
     } catch (error) {
-        console.error('Erro ao deletar o registro', error);
         response.status(500).json({ error: 'Erro ao deletar o registro' });
     }
 };
