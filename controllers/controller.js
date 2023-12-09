@@ -8,7 +8,7 @@ export const createProduto = async (request, response) => {
         console.log('Objeto request.body:', request.body);
         const { codigo_produto, nome, quantidade, preco_unitario, disponibilidade } = request.body;
 
-        console.log("Dados recebidos", codigo_produto, nome, quantidade, preco_unitario, disponibilidade );
+        console.log('Dados recebidos', codigo_produto, nome, quantidade, preco_unitario, disponibilidade );
 
         const novo_produto = await Produto.create({
             codigo_produto,
