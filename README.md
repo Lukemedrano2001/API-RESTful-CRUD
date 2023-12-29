@@ -1,6 +1,6 @@
-# Minha Primeira API RESTful CRUD
+# Minha Primeira API RESTful CRUDd
 
-Bem-vindo à minha primeira API RESTful CRUD! Este projeto permite realizar operações básicas (Create, Read, Update, Delete) em uma lista de produtos. Utilizamos os quatro métodos HTTP fundamentais e seguindo as melhores práticas para garantir que seja uma API RESTful.
+Bem-vindo à minha primeira API RESTful CRUD! Este projeto permite realizar operações básicas (Create, Read, Update, Delete) em uma lista de produtos. Utilizando dos quatro métodos HTTP fundamentais e seguindo as melhores práticas para garantir que seja uma API RESTful.
 
 ## Paradigmas 
 * Paradigma utilizado: Procedural
